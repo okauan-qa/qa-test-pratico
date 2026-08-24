@@ -116,7 +116,7 @@ O cenário do BUG-002 utiliza `cy.clock()` para simular o ambiente em 20/08/2026
 
 Consulte o relatório completo:
 
-📄 [`Teste-Pratico-QA-KauanBrito.pdf`](./Teste-Pratico-QA-KauanBrito.pdf)
+[`Teste-Pratico-QA-KauanBrito.pdf`](./Teste-Pratico-QA-KauanBrito.pdf)
 
 ## Tecnologias utilizadas
 
