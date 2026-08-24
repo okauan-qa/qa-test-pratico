@@ -4,11 +4,11 @@ Repositório contendo casos de teste, automação E2E com Cypress, evidências, 
 
 ## Conteúdo
 
-- 📁 [`cypress/`](./cypress) — código dos testes automatizados, comandos personalizados e arquivos de suporte.
-- ⚙️ [`cypress.config.js`](./cypress.config.js) — configuração do Cypress.
-- 📦 [`package.json`](./package.json) — dependências e scripts do projeto.
-- 🔒 [`package-lock.json`](./package-lock.json) — versões bloqueadas das dependências.
-- 📄 [`Teste-Pratico-QA-KauanBrito.pdf`](./Teste-Pratico-QA-KauanBrito.pdf) — relatório completo com casos de teste, evidências e bugs.
+- [`cypress/`](./cypress) — código dos testes automatizados, comandos personalizados e arquivos de suporte.
+- [`cypress.config.js`](./cypress.config.js) — configuração do Cypress.
+- [`package.json`](./package.json) — dependências e scripts do projeto.
+- [`package-lock.json`](./package-lock.json) — versões bloqueadas das dependências.
+- [`Teste-Pratico-QA-KauanBrito.pdf`](./Teste-Pratico-QA-KauanBrito.pdf) — relatório completo com casos de teste, evidências e bugs.
 
 ## Pré-requisitos
 
