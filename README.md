@@ -1,68 +1,53 @@
 # Teste Prático de QA
 
-Repositório contendo casos de teste, automação E2E com Cypress, evidências, bugs identificados e relatório final desenvolvidos durante o desafio prático para a vaga de Quality Assurance (QA).
+Repositório desenvolvido como parte de um desafio prático para uma vaga de **Quality Assurance (QA)**.
 
-## Conteúdo
+O projeto reúne testes funcionais e automatizados realizados em uma aplicação web, com foco na validação de funcionalidades, regras de negócio, fluxos de usuário e identificação de possíveis problemas.
 
-- [`cypress/`](./cypress) — código dos testes automatizados, comandos personalizados e arquivos de suporte.
-- [`cypress.config.js`](./cypress.config.js) — configuração do Cypress.
-- [`package.json`](./package.json) — dependências e scripts do projeto.
-- [`package-lock.json`](./package-lock.json) — versões bloqueadas das dependências.
-- [`Teste-Pratico-QA-KauanBrito.pdf`](./Teste-Pratico-QA-KauanBrito.pdf) — relatório completo com casos de teste, evidências e bugs.
+## Objetivo
 
-## Pré-requisitos
+Demonstrar a aplicação de conhecimentos de QA por meio de:
 
-- Node.js instalado.
-- npm instalado.
-- Acesso ao ambiente de QA.
-- Credenciais de teste válidas para o ambiente.
+* Criação e execução de cenários de teste;
+* Automação de testes E2E;
+* Validação de fluxos positivos e negativos;
+* Identificação e documentação de bugs;
+* Registro de evidências;
+* Elaboração de relatório de testes.
 
-> Por segurança, credenciais e informações sensíveis não são armazenadas neste repositório.
+## Conteúdo do projeto
 
-## Instalação
+### Automação
 
-Clone o repositório e acesse a pasta do projeto:
+Os testes automatizados foram desenvolvidos utilizando **Cypress**, contemplando diferentes fluxos da aplicação, como:
 
-```bash
-git clone https://github.com/okauan-qa/qa-test-pratico.git
-cd qa-test-pratico
-```
+* Login com credenciais válidas;
+* Validações de login com campos não preenchidos;
+* Validação de credenciais inválidas;
+* Criação de itens no módulo **Campanha → Bancos de dados**;
+* Validação da data de criação;
+* Arquivamento de itens;
+* Recarregamento da lista;
+* Persistência dos itens durante a navegação.
 
-Instale as dependências:
+A automação também utiliza comandos personalizados e recursos do Cypress para facilitar a reutilização dos fluxos de teste.
 
-```bash
-npm install
-```
+### Bugs identificados
 
-Para instalações reproduzíveis usando o arquivo `package-lock.json`, também é possível utilizar:
+Durante a execução dos testes automatizados e testes exploratórios, foram identificados e documentados **6 bugs**, relacionados principalmente aos módulos de Login e Campanha → Banco de dados.
 
-```bash
-npm ci
-```
+Entre os problemas encontrados estão:
 
-## Execução dos testes
+* Mensagem incorreta após tentativa de login válido;
+* Divergência na data de criação de itens;
+* Problemas no arquivamento de itens;
+* Itens que deixam de ser exibidos após recarregar a página;
+* Itens que desaparecem após navegar entre opções do menu;
+* Problemas na área clicável dos botões do menu.
 
-Abrir o Cypress em modo interativo:
+Cada bug possui documentação com informações sobre o cenário, comportamento esperado, comportamento encontrado e evidências.
 
-```bash
-npx cypress open
-```
-
-Executar os testes em modo headless:
-
-```bash
-npx cypress run
-```
-
-Executar somente o arquivo principal de testes:
-
-```bash
-npx cypress run --spec "cypress/e2e/qa-teste-colmeia.cy.js"
-```
-
-Caso o nome do arquivo no repositório seja diferente, ajuste o caminho utilizado no comando acima.
-
-## Estrutura dos testes
+## Estrutura do projeto
 
 ```text
 cypress/
@@ -73,59 +58,40 @@ cypress/
 └── support/
     ├── commands.js
     └── e2e.js
+
+cypress.config.js
+package.json
+package-lock.json
+Teste-Pratico-QA-KauanBrito.pdf
 ```
 
-- `cypress/e2e/` — casos de teste E2E.
-- `cypress/support/commands.js` — comandos personalizados, incluindo o fluxo reutilizável de login.
-- `cypress/support/e2e.js` — configuração global dos testes.
-- `cypress/fixtures/` — dados estáticos de apoio.
-- `cypress.config.js` — configuração do projeto Cypress.
+### Principais arquivos
 
-## Cenários automatizados
+* **cypress/e2e/** — testes automatizados E2E;
+* **cypress/support/commands.js** — comandos personalizados e fluxos reutilizáveis;
+* **cypress/support/e2e.js** — configurações de suporte dos testes;
+* **cypress/fixtures/** — dados utilizados como apoio aos testes;
+* **cypress.config.js** — configuração do Cypress;
+* **Teste-Pratico-QA-KauanBrito.pdf** — relatório com os testes realizados, bugs identificados e evidências.
 
-- Login com credenciais válidas.
-- Validações de login sem usuário, sem senha e sem preenchimento dos campos.
-- Criação de item no módulo Campanha → Bancos de dados.
-- Validação da data de criação usando data simulada com `cy.clock()`.
-- Arquivamento de item.
-- Recarregamento da lista.
-- Persistência dos itens durante a navegação entre opções de Campanha.
+## Tecnologias e ferramentas
 
-## Bugs identificados
+* **Cypress**
+* **JavaScript**
+* **Node.js**
+* **npm**
+* **Git**
+* **GitHub**
 
-| ID | Título | Módulo |
-|----|--------|--------|
-| BUG-001 | Mensagem de credenciais incorretas exibida após login válido | Login |
-| BUG-002 | Item criado em 20/08 é exibido com data de criação em 21/08 | Campanha → Banco de dados |
-| BUG-003 | Item arquivado não aparece na lista de arquivados | Campanha → Banco de dados |
-| BUG-004 | Ao clicar em “Recarregar”, os itens deixam de ser exibidos | Campanha → Banco de dados |
-| BUG-005 | Itens desaparecem ao navegar e retornar para Banco de dados | Campanha → Banco de dados |
-| BUG-006 | Botões do menu respondem somente ao clique sobre o texto | Campanha |
+## Relatório
 
-## Observações sobre a cobertura
+O relatório completo do desafio está disponível no arquivo:
 
-- Os BUGs 001 a 005 foram reproduzidos e documentados com apoio de testes automatizados em Cypress.
-- O BUG-006 foi identificado por teste manual exploratório e documentado com evidência visual. O cenário depende da posição exata do clique dentro da área visual do item do menu: o clique sobre o texto funciona, mas o clique fora do texto não dispara a navegação.
-- O relatório detalhado com cenário, pré-condições, passos, resultados e evidências está disponível no PDF.
+**Teste-Pratico-QA-KauanBrito.pdf**
 
-## Controle da data no BUG-002
-
-O cenário do BUG-002 utiliza `cy.clock()` para simular o ambiente em 20/08/2026 às 22h30, mantendo os timers reais da aplicação por meio do controle somente da função `Date`.
-
-## Evidências e relatório
-
-Consulte o relatório completo:
-
-[`Teste-Pratico-QA-KauanBrito.pdf`](./Teste-Pratico-QA-KauanBrito.pdf)
-
-## Tecnologias utilizadas
-
-- Cypress.
-- JavaScript.
-- Node.js.
-- npm.
-- Git e GitHub.
+Nele estão documentados os cenários de teste, resultados, bugs encontrados e respectivas evidências.
 
 ---
 
-Kauan Brito — desafio prático para vaga de QA.
+**Kauan Brito**
+Desafio prático — Quality Assurance (QA)

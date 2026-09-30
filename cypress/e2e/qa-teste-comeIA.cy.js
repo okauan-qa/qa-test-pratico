@@ -35,7 +35,7 @@ describe('Testando página de login', () => {
 
 describe('Testando dashboard', () => {
   beforeEach(() => {
-    const dataFixa = new Date('2026-08-20T22:30:00-03:00') //Alterando o dia e hora do ambiente para o dia 20/08 às 20h30, horário no qual o erro foi identificado. 
+    const dataFixa = new Date('2026-09-29T22:30:00-03:00') //Alterando o dia e hora do ambiente para o dia 29/09 às 20h30, horário no qual o erro foi identificado. 
 
     cy.clock(dataFixa, ['Date'])
     cy.login()
@@ -51,7 +51,7 @@ describe('Testando dashboard', () => {
     
     cy.contains('button', 'Salvar').click()
 
-    cy.contains('td', '2026-08-21').should('have.text', '2026-08-21') //Verifica que a data mudou para o dia 21/08
+    cy.contains('td', '2026-09-30').should('have.text', '2026-09-30') //Verifica que a data mudou para o dia 30/09
   })
   it('BUG-003 - Item arquivado não aparece na lista de arquivados', () =>{
     cy.get('a[routerlink="/dashboard/campanha"]').click()
