@@ -71,7 +71,7 @@ Durante a execução dos testes automatizados e testes exploratórios, foram ide
 | ID      | Título                                                       | Módulo                    |
 | ------- | ------------------------------------------------------------ | ------------------------- |
 | BUG-001 | Mensagem de credenciais incorretas exibida após login válido | Login                     |
-| BUG-002 | Item criado em 29/09 é exibido com data de criação em 21/08  | Campanha → Banco de dados |
+| BUG-002 | Item criado em 29/09 é exibido com data de criação em 30/09  | Campanha → Banco de dados |
 | BUG-003 | Item arquivado não aparece na lista de arquivados            | Campanha → Banco de dados |
 | BUG-004 | Ao clicar em “Recarregar”, os itens deixam de ser exibidos   | Campanha → Banco de dados |
 | BUG-005 | Itens desaparecem ao navegar e retornar para Banco de dados  | Campanha → Banco de dados |
